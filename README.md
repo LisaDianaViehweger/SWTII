@@ -1,2 +1,0 @@
-# SWTII
-SWTIIU3

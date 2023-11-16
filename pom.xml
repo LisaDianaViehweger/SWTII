@@ -28,5 +28,16 @@
       <version>3.24.2</version>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>org.jacoco</groupId>
+      <artifactId>jacoco-maven-plugin</artifactId>
+      <version>0.8.11</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
+
+  <build>
+    <defaultGoal>clean org.jacoco:jacoco-maven-plugin:prepare-agent verify org.jacoco:jacoco-maven-plugin:report</defaultGoal>
+  </build>
 </project>

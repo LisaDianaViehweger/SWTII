@@ -54,6 +54,33 @@ Diese Schritte werden in der `pom.xml` in Abschnitt `project.build` definiert:
 
 ## Aufgabe 6 - Testsuite
 
+### Definition der Tests
+Zum Testen der Klasse haben wir `src/test/java/st2/SimpleLinkedListUnitTest.java` hinzugefügt, worin alle Testfälle mit JUnit5 definiert sind. Vor jedem Testfall wird `initializeEmptyList()` ausgeführt (@BeforeEach). Die Tests sind durch Subklassen strukturiert (@Nested). Folgende Testfälle sind implementiert:
+* `SizeFunctionTests`
+  * `emptyListSize0()`: Für leere Liste gilt `size == 0`.
+  * `addIncreasesSize()`: Wenn `add()` n-mal aufgerufen wird, gilt `size == n`.
+* `AddFunctionTests`
+  * `addsElements()`: Elemente für die `add()` aufgerufen wird, sind in der Liste.
+  * `acceptsNullValues()`: `null` ist valides Element.
+  * `acceptsDoubleValues()`: Dopplungen von Elementen sind erlaubt.
+  * `keepsOrder()`: Reihenfolge der Listenelemente entspricht Reihenfolge der `add()`-Aufrufe
+* `IteratorTests`
+  * `IteratorConstructorTests`
+    * `iteratorStartsAtFirstElement()`: Erster `next()`-Aufruf gibt erstes Element zurück.
+  * `HasNextFunctionTests`
+    * `emptyListReturnsFalse()`: `hasNext() == false` für leere Liste.
+    * `returnsFalseAtEnd()`: Bei n Elementen und nach n `next()`-Aufrufen gilt `hasNext() == false`. 
+    * `returnsTrueWhenNextElementExists()`: Bei n Elementen und nach 1..n-1 `next()`-Aufrufen gilt `hasNext() == true`.
+  * `NextFunctionTests`
+    * `emptyListThrowsNoSuchElementException()`: `next()`-Aufruf wirft `NoSuchElementException` für leere Listen.
+    * `throwsNoSuchElementExceptionAtEnd()`: Bei n Elementen und nach n `next()`-Aufrufen wirft `next()`-Aufruf `NoSuchElementException`.
+    * `returnsNextElement()`: Bei n Elementen und nach k=1..n-1 `next()`-Aufrufen gibt `next()` das (k+1)-te Element der Liste zurück.
+  * `RemoveFunctionTests`
+    * `throwsUnsupportedOperationException()`: `remove()` wirft `UnsupportedOperationException`.
+
+### Gefundene Fehler
+
+
 ## Aufgabe 7 - Statische Analyse
 
 ## Aufgabe 8 - Debugger

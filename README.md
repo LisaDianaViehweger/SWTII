@@ -2,9 +2,18 @@
 
 ## Aufgabe 3 - Maven initialisieren
 
-* neues (IntelliJ-) Projekt erstellt
-  * Vorlage für Maven-Projekte ausgewählt
-  * SimpleLinkedList
+Neues (IntelliJ-) Projekt erstellt:
+* Vorlage für Maven-Projekte ausgewählt
+* SimpleLinkedList
+
+Kompilier- und Testvorgänge anstoßen:
+
+* IntelliJ &rarr; Maven &rarr; Lifecycle &rarr; *compile* oder *test*
+* Maven CLT:
+```console
+  ~/IdeaProjects/SWTII main ❯ mvn compile
+  ~/IdeaProjects/SWTII main ❯ mvn test
+  ```
 
 ## Aufgabe 4 - JUnit & AssertJ
 
@@ -51,6 +60,15 @@ Diese Schritte werden in der `pom.xml` in Abschnitt `project.build` definiert:
 ```xml
 <defaultGoal>clean org.jacoco:jacoco-maven-plugin:prepare-agent verify org.jacoco:jacoco-maven-plugin:report</defaultGoal>
 ```
+
+Die folgenden Arten von Code Coverage werden unterstützt:
+* Instruction Coverage
+* Line Coverage
+* Branch Coverage
+* Method Coverage
+* Class Coverage
+
+
 
 ## Aufgabe 6 - Testsuite
 

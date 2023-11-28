@@ -6,6 +6,7 @@ package st2;
 import java.util.AbstractCollection;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * Achtung! Einige der Methoden sind fehlerhaft und müssen repariert werden.
@@ -31,7 +32,7 @@ public class SimpleLinkedList<E> extends AbstractCollection<E> implements Collec
 		if (start == null) {
 			start = e;
 		}
-		if (end != null); {
+		if (end != null) {
 			end.next = e;
 		}
 		end = e;
@@ -46,9 +47,11 @@ public class SimpleLinkedList<E> extends AbstractCollection<E> implements Collec
 
 	private class Iter implements Iterator<E> {
 		private Elem current;
+		private Elem previous;
 
 		public Iter() {
 			current = start;
+			previous = null;
 		}
 
 		@Override
@@ -58,11 +61,21 @@ public class SimpleLinkedList<E> extends AbstractCollection<E> implements Collec
 
 		@Override
 		public E next() {
-			current = current.next;
-			return current.elem;
+
+			if (hasNext()) {
+				E elem = current.elem;
+				previous = current;
+				current = current.next;
+				return elem;
+			} else {
+				throw new NoSuchElementException();
+			}
+
 		}
 
 		@Override
+
+		// remove test??
 		public void remove() {
 			throw new UnsupportedOperationException();
 		}

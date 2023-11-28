@@ -13,7 +13,7 @@ import java.util.NoSuchElementException;
  */
 public class SimpleLinkedList<E> extends AbstractCollection<E> implements Collection<E> {
 	private class Elem {
-		private E elem;
+		final E elem;
 		private Elem next;
 
 		public Elem(E elem, Elem next) {
@@ -47,11 +47,9 @@ public class SimpleLinkedList<E> extends AbstractCollection<E> implements Collec
 
 	private class Iter implements Iterator<E> {
 		private Elem current;
-		private Elem previous;
 
 		public Iter() {
-			current = start;
-			previous = null;
+			this.current = start;
 		}
 
 		@Override
@@ -64,7 +62,6 @@ public class SimpleLinkedList<E> extends AbstractCollection<E> implements Collec
 
 			if (hasNext()) {
 				E elem = current.elem;
-				previous = current;
 				current = current.next;
 				return elem;
 			} else {
@@ -75,7 +72,6 @@ public class SimpleLinkedList<E> extends AbstractCollection<E> implements Collec
 
 		@Override
 
-		// remove test??
 		public void remove() {
 			throw new UnsupportedOperationException();
 		}

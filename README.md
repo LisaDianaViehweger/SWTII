@@ -97,8 +97,14 @@ Zum Testen der Klasse haben wir `src/test/java/st2/SimpleLinkedListUnitTest.java
     * `throwsUnsupportedOperationException()`: `remove()` wirft `UnsupportedOperationException`.
 
 ### Gefundene Fehler
+* in Methode *next()*:
+  * *current* vs. *next*
+  * *hasNext()* Bedingung und Exception fehlte
 
 
 ## Aufgabe 7 - Statische Analyse
 
 ## Aufgabe 8 - Debugger
+
+<img src="https://i.ibb.co/2F8ScNQ/Bildschirmfoto-2023-11-28-um-22-31-16.png" alt="isolated" width="auto"/>
+

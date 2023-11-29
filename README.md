@@ -1,5 +1,9 @@
 # SWTII - Übung 3
 
+## Aufgabe 1 & 2
+
+*Trivial*
+
 ## Aufgabe 3 - Maven initialisieren
 
 Neues (IntelliJ-) Projekt erstellt:

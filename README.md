@@ -97,12 +97,22 @@ Zum Testen der Klasse haben wir `src/test/java/st2/SimpleLinkedListUnitTest.java
     * `throwsUnsupportedOperationException()`: `remove()` wirft `UnsupportedOperationException`.
 
 ### Gefundene Fehler
+
 * in Methode *next()*:
   * *current* vs. *next*
   * *hasNext()* Bedingung und Exception fehlte
+* in Methode *add(E o)* &rarr; if(...) ";" {...}
 
 
 ## Aufgabe 7 - Statische Analyse
+
+<img src="https://i.ibb.co/1MGLgPx/Bildschirmfoto-2023-11-29-um-14-03-30.png" alt="isolated" width="auto"/>
+
+* Bad practice *(Violations of recommended and essential coding practice)*
+  * Iterator next() method cannot throw NoSuchElementException (vgl. Aufgabe 6, Gefundene Fehler - Punkt 1.2)
+* Dodgy code *(Code that is confusing, anomalous, or written in a way that leads itself to errors.)*
+  * Class implements same interface as superclass (Kein "bug")
+  * Useless control flow to next line (vgl. Aufgabe 6, Gefundene Fehler - Punkt 2)
 
 ## Aufgabe 8 - Debugger
 

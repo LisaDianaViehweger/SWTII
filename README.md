@@ -1,4 +1,4 @@
-# SWTII - Übung 3
+# SWTII - Übung 3 Mi Gruppe1
 
 ## Aufgabe 1 & 2
 
